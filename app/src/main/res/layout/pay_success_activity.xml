@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+                name="model"
+                type="com.wbg.xigui.viewmodel.PayStoreSuccessViewModel"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto"
+                  android:orientation="vertical"
+                  android:background="@color/white"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/left_right_margin"
+                                android:drawableTop="@drawable/icon_success"
+                                android:textSize="12sp"
+                                android:includeFontPadding="false"
+                                android:textColor="@color/text_black"
+                                android:text="支付成功"
+                                android:drawablePadding="10dp"
+                                />
+
+                        <TextView
+                                android:id="@+id/pay_num_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="￥0.00"
+                                android:layout_gravity="center_horizontal"
+                                android:includeFontPadding="false"
+                                android:layout_marginTop="6dp"
+                                android:textColor="@color/theme"
+                                android:textSize="18sp"/>
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="@dimen/left_right_margin"
+                                android:paddingLeft="@dimen/left_right_margin"
+                                android:paddingRight="@dimen/left_right_margin"
+                                android:gravity="center_vertical">
+
+                            <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:text="支付方式"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/text_black"
+                                    />
+
+                            <TextView
+                                    android:id="@+id/pay_way_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/text_black"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    android:text=""/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="@dimen/left_right_margin"
+                                android:paddingLeft="@dimen/left_right_margin"
+                                android:paddingRight="@dimen/left_right_margin"
+                                android:gravity="center_vertical">
+
+                            <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:text="支付金额"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/text_black"
+                                    />
+
+                            <TextView
+                                    android:id="@+id/real_pay_num_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/theme"
+                                    android:textSize="12sp"
+                                    android:text="￥0"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="@dimen/left_right_margin"
+                                android:paddingLeft="@dimen/left_right_margin"
+                                android:paddingRight="@dimen/left_right_margin"
+                                android:gravity="center_vertical">
+
+                            <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:text="优惠金额"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/text_black"
+                                    />
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/theme"
+                                    android:textSize="12sp"
+                                    android:text="￥0"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginBottom="@dimen/left_right_margin"
+                                android:layout_marginTop="@dimen/left_right_margin"
+                                android:paddingLeft="@dimen/left_right_margin"
+                                android:paddingRight="@dimen/left_right_margin"
+                                android:gravity="center_vertical">
+
+                            <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:text="兑换金额"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/text_black"
+                                    />
+
+                            <TextView
+                                    android:id="@+id/exchange_num_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/theme"
+                                    android:textSize="12sp"
+                                    android:text="￥0"/>
+                        </LinearLayout>
+
+                        <include layout="@layout/line"/>
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="44dp"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_black"
+                                android:text="请给我们的服务打分"
+                                android:layout_marginLeft="@dimen/left_right_margin"
+                                android:gravity="center"/>
+
+                        <include layout="@layout/line"/>
+
+                        <com.hard.imageratingview.ImageRatingView
+                                android:id="@+id/rating_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginLeft="@dimen/left_right_margin"
+                                app:backImage="@drawable/icon_big_star"
+                                app:frontImage="@drawable/icon_big_red_star"
+                                app:imageHeight="25dp"
+                                app:touchable="true"
+                                app:imageWidth="25dp"
+                                app:maxCount="5"
+                                app:minStep="1"
+                                app:rating="0"
+                                app:spanSize="15dp"
+                                />
+
+                        <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="70dp"
+                                android:gravity="start"
+                                android:textSize="12sp"
+                                android:hint="给点评价"
+                                android:maxLength="150"
+                                android:padding="5dp"
+                                android:textColor="@color/text_black"
+                                android:textColorHint="#a0a0a0"
+                                android:layout_marginLeft="@dimen/left_right_margin"
+                                android:layout_marginRight="@dimen/left_right_margin"
+                                android:layout_marginTop="15dp"
+                                android:background="#fbfbfb"/>
+
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:gravity="right"
+                                android:layout_marginRight="@dimen/left_right_margin"
+                                android:textColor="@color/hint_color"
+                                android:text="*不超过150字"
+                                android:layout_marginTop="5dp"
+                                android:layout_height="wrap_content"
+                                android:textSize="9sp"
+                                />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/left_right_margin"
+                                app:items="@{model.list}"
+                                app:spanCount="4"
+                                app:itemBinding="@{model.binding}"
+                                app:adapter="@{model.adapter}"
+                                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+
+                        <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:background="@drawable/theme_btn_bg"
+                                android:layout_marginTop="30dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginLeft="@dimen/left_right_margin"
+                                android:layout_marginRight="@dimen/left_right_margin"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:text="提交评价"/>
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

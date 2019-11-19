@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+                name="model"
+                type="com.wbg.xigui.viewmodel.TypeFragmentViewModel"/>
+
+        <import type="android.view.View"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto"
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:background="@color/white"
+                  android:layout_height="match_parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="@dimen/left_right_margin"
+                android:layout_marginRight="@dimen/left_right_margin"
+                android:gravity="center_vertical"
+                android:background="@drawable/type_search_edt_bg"
+                android:layout_marginTop="10dp">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/left_right_margin"
+                    android:src="@drawable/icon_search_black"/>
+
+            <TextView
+                    android:id="@+id/tv_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:layout_marginRight="@dimen/left_right_margin"
+                    android:layout_marginLeft="@dimen/left_right_margin"
+                    android:gravity="center_vertical"
+                    android:hint="搜索商品"
+                    android:textSize="12sp"
+                    android:lines="1"/>
+        </LinearLayout>
+
+        <include layout="@layout/line"/>
+
+        <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+            <androidx.recyclerview.widget.RecyclerView
+                    app:items="@{model.typeList}"
+                    app:itemBinding="@{model.typeBinding}"
+                    app:adapter="@{model.typeAdapter}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:layout_width="95dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"/>
+
+            <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/line_color"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                        android:id="@+id/card_view"
+                        android:visibility="@{model.bannerList.size()>0?View.VISIBLE:View.GONE}"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="@dimen/left_right_margin"
+                        android:layout_marginRight="@dimen/left_right_margin"
+                        app:cardCornerRadius="4dp"
+                        app:cardBackgroundColor="@color/transparent"
+                        app:cardElevation="2.7dp"
+                        >
+
+                    <com.youth.banner.Banner
+                            app:bannerUrls="@{model.bannerList}"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            app:indicator_drawable_selected="@drawable/iv_guide_point_select"
+                            app:indicator_drawable_unselected="@drawable/iv_guide_point_normal"
+                            app:indicator_margin="4.7dp"
+                            />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:spanCount="3"
+                        app:itemBinding="@{model.goodsBinding}"
+                        app:items="@{model.goodsList}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="bean"
+                type="com.wbg.xigui.bean.AccountRightBean"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_marginBottom="15dp"
+                  android:layout_height="wrap_content">
+
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="106dp">
+
+            <LinearLayout
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                    <com.wbg.xigui.widget.CircleImageView
+                            app:url="@{bean.obligorIcon}"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@mipmap/ic_launcher"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{bean.obligorUserName}"
+                            android:layout_marginTop="3dp"
+                            android:textColor="#ff333333"
+                            android:textSize="12sp"
+                            />
+                </LinearLayout>
+
+                <com.wbg.xigui.widget.MySeekBar
+                        android:id="@+id/seek_bar"
+                        android:layout_width="0dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/complete_tv"
+                    android:layout_width="90dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/settle_bg"
+                    android:gravity="center"
+                    android:text="查看结清合同"
+                    android:textColor="#ffffffff"
+                    android:textSize="10sp"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginRight="9dp"
+                    android:layout_marginBottom="17dp"/>
+        </FrameLayout>
+
+        <include layout="@layout/line_left_margin"/>
+    </LinearLayout>
+</layout>

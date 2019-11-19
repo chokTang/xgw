@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:background="@color/bg_rice"
+              android:gravity="center"
+              android:layout_height="match_parent">
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_empty"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#acacac"
+            android:lineSpacingExtra="5dp"
+            android:gravity="center"
+            android:layout_marginTop="24dp"
+            android:textSize="15sp"
+            android:text="没有找到您想要的内容\n换个关键词试试!"/>
+</LinearLayout>

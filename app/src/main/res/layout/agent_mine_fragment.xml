@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+                name="model"
+                type="com.wbg.xigui.viewmodel.AgentMineViewModel"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto"
+                  android:orientation="vertical"
+                  android:background="@color/bg_rice"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/top_ll"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="@drawable/supplier_top_bg"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="144dp"
+                        >
+
+                    <LinearLayout
+                            android:id="@+id/login_area"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:layout_marginLeft="@dimen/left_right_margin"
+                            android:orientation="horizontal">
+
+                        <com.wbg.xigui.widget.CircleImageView
+                                android:id="@+id/head_img"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:src="@mipmap/ic_launcher"/>
+
+                        <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_gravity="center_vertical"
+                                android:orientation="vertical">
+
+                            <TextView
+                                    android:id="@+id/name_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:lines="1"
+                                    android:ellipsize="end"
+                                    android:textSize="16sp"
+                                    android:text="请登录"
+                                    android:textStyle="bold"
+                                    android:includeFontPadding="false"
+                                    android:textColor="@color/white"/>
+
+                            <TextView
+                                    android:id="@+id/login_ps"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="登录时间:"
+                                    android:visibility="gone"
+                                    android:textSize="12sp"
+                                    android:layout_marginTop="9dp"
+                                    android:includeFontPadding="false"
+                                    android:textColor="#80FFFFFF"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                            android:onClick="@{()->model.goSetting()}"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableTop="@drawable/icon_set"
+                            android:text="设置"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_10"
+                            android:gravity="center_horizontal"
+                            android:drawablePadding="4dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="@dimen/left_right_margin"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View
+                    android:id="@+id/temp"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_marginBottom="35dp"
+                    app:layout_constraintBottom_toBottomOf="@id/top_ll"/>
+
+            <LinearLayout
+                    app:layout_constraintTop_toBottomOf="@id/temp"
+                    android:layout_marginBottom="20dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                <LinearLayout
+                        android:onClick="@{()->model.goAccount()}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/left_right_margin"
+                        android:paddingRight="@dimen/left_right_margin"
+                        android:paddingBottom="7dp"
+                        android:paddingTop="9dp"
+                        android:layout_marginLeft="@dimen/left_right_margin"
+                        android:layout_marginRight="@dimen/left_right_margin"
+                        android:background="@drawable/conner_4dp_white"
+                        android:orientation="vertical">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:orientation="horizontal">
+
+                        <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="5dp"
+                                android:text="我的账户"
+                                android:textColor="#ff333333"
+                                android:textSize="18sp"
+                                />
+
+                        <TextView
+                                android:id="@+id/all_income_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="总收入：¥2000.00"
+                                android:textColor="#ffff203a"
+                                android:textSize="15sp"
+                                />
+                    </LinearLayout>
+
+                    <include layout="@layout/line"/>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/left_right_margin"
+                            android:gravity="center_vertical">
+
+                        <TextView
+                                android:id="@+id/moneyWithdrawal_tv"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:layout_height="wrap_content"
+                                android:text="已提现：￥0.00"
+                                android:textColor="#ff666666"
+                                android:textSize="12sp"
+                                />
+
+                        <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:background="@color/line_color"/>
+
+                        <TextView
+                                android:id="@+id/balance_tv"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="余额：￥0.00"
+                                android:textColor="#ff666666"
+                                android:textSize="12sp"
+                                />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white"
+                        android:layout_marginTop="@dimen/left_right_margin"
+                        >
+
+                    <LinearLayout
+                            android:id="@+id/change_role_ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:paddingRight="@dimen/left_right_margin"
+                            android:paddingLeft="@dimen/left_right_margin"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="身份切换"
+                                android:gravity="center_vertical"
+                                android:drawablePadding="11dp"
+                                android:drawableLeft="@drawable/icon_sfqh"
+                                android:textColor="#ff333333"
+                                android:textSize="17sp"/>
+
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableRight="@drawable/icon_enter"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:id="@+id/ll_bank_card_manage"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:paddingRight="@dimen/left_right_margin"
+                            android:paddingLeft="@dimen/left_right_margin"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="银行卡管理"
+                                android:gravity="center_vertical"
+                                android:drawablePadding="11dp"
+                                android:drawableLeft="@mipmap/icon_card_of_bank"
+                                android:textColor="#ff333333"
+                                android:textSize="17sp"/>
+
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableRight="@drawable/icon_enter"/>
+                    </LinearLayout>
+
+                    <include layout="@layout/line_left_margin"/>
+
+                    <LinearLayout
+                            android:id="@+id/ll_spread"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:paddingRight="@dimen/left_right_margin"
+                            android:paddingLeft="@dimen/left_right_margin"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="推广分享"
+                                android:gravity="center_vertical"
+                                android:drawablePadding="11dp"
+                                android:drawableLeft="@drawable/icon_share"
+                                android:textColor="#ff333333"
+                                android:textSize="17sp"/>
+
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableRight="@drawable/icon_enter"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+                name="bean"
+                type="com.wbg.xigui.bean.GoodsBean"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:gravity="center_horizontal"
+                  android:layout_height="wrap_content">
+
+        <ImageView
+                android:layout_width="116dp"
+                android:layout_height="109dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginTop="10dp"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginRight="@dimen/left_right_margin"
+                android:layout_marginLeft="@dimen/left_right_margin"
+                android:layout_marginTop="16dp"
+                android:lines="2"
+                android:text="sfa"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="@dimen/left_right_margin"
+                android:layout_marginRight="@dimen/left_right_margin">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/theme"
+                    android:textSize="12sp"
+                    android:layout_weight="1"
+                    android:text="￥1523.00"/>
+
+            <ImageView
+                    android:id="@+id/add_cart_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_add_cart"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

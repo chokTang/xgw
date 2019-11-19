@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff203a</color>
+    <color name="colorPrimaryDark">#ff203a</color>
+    <color name="colorAccent">#ff203a</color>
+
+    <color name="white">#ffffff</color>
+    <color name="theme">#ff203a</color>
+    <color name="bg_rice">#f2f2f2</color>
+    <color name="transparent">#00000000</color>
+    <color name="text_black">#333333</color>
+    <color name="text_gray">#606060</color>
+    <color name="text_80">#ff808080</color>
+    <color name="bg_gray">#fff2f2f2</color>
+    <color name="line_color">#f2f2f2</color>
+    <color name="hint_color">#a0a0a0</color>
+    <color name="subColor">#ffbababa</color>
+    <color name="addColor">#ff333333</color>
+    <color name="dividerColor">#fff2f2f2</color>
+    <color name="fontcColor1">#333333</color><!--字体默认颜色-->
+    <color name="fontcColor3">#aaaabb</color><!--字体稍微浅色颜色-->
+    <color name="fontcColorgray">#ff888888</color><!--字体稍微浅色颜色-->
+
+
+    <color name="color_1">#F5A63B</color>
+    <color name="color_2">#398BCD</color>
+    <color name="color_3">#FD7264</color>
+    <color name="color_4">#00A69B</color>
+
+</resources>

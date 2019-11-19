@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+                name="model"
+                type="com.wbg.xigui.viewmodel.StoreDetailViewModel"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto"
+                  android:orientation="vertical"
+                  android:background="@color/white"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+
+        <com.wbg.xigui.widget.MyScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                            android:id="@+id/head_img"
+                            android:layout_width="66dp"
+                            android:layout_height="66dp"
+                            android:layout_marginLeft="17dp"
+                            android:src="@mipmap/ic_launcher"
+                            />
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:orientation="vertical">
+
+                        <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                >
+
+                            <TextView
+                                    android:id="@+id/distance_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="bottom"
+                                    android:layout_alignParentEnd="true"
+                                    android:textColor="@color/text_gray"
+                                    android:layout_centerVertical="true"
+                                    android:textSize="10sp"
+                                    android:text="0m"/>
+
+                            <TextView
+                                    android:id="@+id/name_tv"
+                                    android:layout_toStartOf="@id/distance_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="2"
+                                    android:layout_marginEnd="5dp"
+                                    android:ellipsize="end"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/text_black"
+                                    android:text=""/>
+                        </RelativeLayout>
+
+                        <com.hard.imageratingview.ImageRatingView
+                                android:id="@+id/rating_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                app:backImage="@drawable/ic_star_normal"
+                                app:frontImage="@drawable/ic_star_selected"
+                                app:imageHeight="8dp"
+                                app:imageWidth="8dp"
+                                app:maxCount="5"
+                                app:minStep="0.2"
+                                app:rating="0"
+                                app:spanSize="3.3dp"
+                                app:touchable="false"/>
+
+                        <TextView
+                                android:id="@+id/exchange_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="13dp"
+                                android:minWidth="45dp"
+                                android:includeFontPadding="false"
+                                android:layout_alignParentEnd="true"
+                                android:textColor="@color/white"
+                                android:lines="1"
+                                android:gravity="center"
+                                android:layout_marginTop="11dp"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp"
+                                android:background="@drawable/exchange_corner_bg"
+                                android:layout_centerVertical="true"
+                                android:textSize="10sp"
+                                android:text="兑0%"/>
+
+                        <TextView
+                                android:layout_toStartOf="@id/exchange_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="13dp"
+                                android:layout_marginRight="5dp"
+                                android:gravity="center"
+                                android:id="@+id/sales_tv"
+                                android:lines="1"
+                                android:layout_marginTop="5dp"
+                                android:includeFontPadding="false"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:background="@drawable/pink_white_corner_bg"
+                                android:ellipsize="end"
+                                android:textSize="10sp"
+                                android:textColor="@color/theme"
+                                android:text=""/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:itemBinding="@{model.storePicBinding}"
+                        app:items="@{model.storePicList}"
+                        app:adapter="@{model.picAdapter}"
+                        android:layout_marginLeft="@dimen/left_right_margin"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/left_right_margin"
+                        android:layout_marginBottom="@dimen/left_right_margin"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                <TextView
+                        android:id="@+id/time_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:textColor="@color/text_black"
+                        android:text="营业时间：09:00 - 22:00"
+                        android:drawableLeft="@drawable/icon_time"
+                        android:layout_marginLeft="@dimen/left_right_margin"
+                        android:drawablePadding="5dp"
+                        />
+
+                <TextView
+                        android:id="@+id/address_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/text_gray"
+                        android:text="渝北区胜利路194号金港国际购物中心"
+                        android:drawableLeft="@drawable/icon_position"
+                        android:layout_marginLeft="@dimen/left_right_margin"
+                        android:drawablePadding="5dp"
+                        />
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="7dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@color/bg_rice"/>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:gravity="center_vertical"
+                        android:onClick="@{()->model.goComment()}"
+                        android:text="@{`用户评论 (`+model.commentList.size()+`)`}"
+                        android:drawableRight="@drawable/icon_enter"
+                        android:paddingLeft="16dp"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_black"
+                        android:textStyle="bold"
+                        android:paddingRight="@dimen/left_right_margin"/>
+
+                <include layout="@layout/line"/>
+
+                <com.wbg.xigui.widget.MyRecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:items="@{model.commentList}"
+                        app:itemBinding="@{model.commentBinding}"
+                        app:adapter="@{model.commentAdapter}"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            </LinearLayout>
+        </com.wbg.xigui.widget.MyScrollView>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:orientation="horizontal">
+
+            <RelativeLayout
+                    android:id="@+id/call_ll"
+                    android:layout_width="0dp"
+                    android:layout_weight="120"
+                    android:layout_height="match_parent">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="联系商家"
+                        android:textStyle="bold"
+                        android:layout_centerInParent="true"
+                        android:drawableLeft="@drawable/icon_phone"
+                        android:drawablePadding="5dp"
+                        android:textColor="#a0a0a0"
+                        android:textSize="16sp"/>
+            </RelativeLayout>
+
+            <TextView
+                    android:id="@+id/pay_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="255"
+                    android:gravity="center"
+                    android:text="立即支付"
+                    android:background="@color/theme"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

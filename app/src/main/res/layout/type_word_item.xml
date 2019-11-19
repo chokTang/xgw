@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+                name="bean"
+                type="com.wbg.xigui.bean.ProductTypeBean"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:gravity="center"
+                  android:layout_height="45dp">
+
+        <TextView
+                android:id="@+id/type_tv"
+                android:layout_width="89dp"
+                android:layout_height="25dp"
+                android:textSize="13sp"
+                android:text="@{bean.name}"
+                android:textColor="@color/white"
+                android:background="@drawable/type_word_corner_bg"
+                android:gravity="center"/>
+    </LinearLayout>
+</layout>

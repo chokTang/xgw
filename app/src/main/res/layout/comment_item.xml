@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+                name="bean"
+                type="com.wbg.xigui.bean.CommentBean"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto"
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/left_right_margin"
+                android:layout_marginRight="@dimen/left_right_margin"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical">
+
+            <com.wbg.xigui.widget.CircleImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    app:url="@{bean.head}"
+                    android:scaleType="centerCrop"
+                    />
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="13dp"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/name_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lines="1"
+                        android:ellipsize="end"
+                        android:textColor="@color/text_black"
+                        android:textSize="14sp"
+                        android:text="@{bean.userNickName}"
+                        android:textStyle="bold"/>
+
+                <com.hard.imageratingview.ImageRatingView
+                        android:id="@+id/rating_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        app:backImage="@drawable/ic_star_normal"
+                        app:frontImage="@drawable/ic_star_selected"
+                        app:imageHeight="8dp"
+                        app:imageWidth="8dp"
+                        app:maxCount="5"
+                        app:minStep="0.5"
+                        app:rating="3.5"
+                        app:spanSize="3.3dp"
+                        app:touchable="false"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginBottom="14dp"
+                android:layout_marginLeft="14dp"
+                android:text="@{bean.comment}"
+                android:layout_marginRight="14dp"
+                android:textColor="@color/text_black"
+                android:layout_marginTop="16dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/picture_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="4"/>
+
+        <include layout="@layout/line_left_margin"/>
+    </LinearLayout>
+</layout>

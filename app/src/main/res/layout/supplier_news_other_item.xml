@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@color/white">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/left_right_margin"
+                android:paddingRight="@dimen/left_right_margin">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="您的店铺尚未发布商品，请及时处理"
+                    android:textColor="#ff333333"
+                    android:textSize="12sp"
+                    />
+
+            <include layout="@layout/line"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="您的店铺尚未发布商品，请及时处理"
+                    android:textColor="#ffbababa"
+                    android:textSize="10sp"
+                    />
+        </LinearLayout>
+
+        <include layout="@layout/rice_divider"/>
+    </LinearLayout>
+</layout>

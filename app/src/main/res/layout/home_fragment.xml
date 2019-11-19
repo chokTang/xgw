@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.wbg.xigui.viewmodel.HomeFragmentViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_rice"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/theme">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/left_right_margin"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/scan_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:drawableTop="@drawable/icon_sys"
+                    android:drawablePadding="4dp"
+                    android:text="扫一扫"
+                    android:padding="5dp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_10" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="@dimen/left_right_margin"
+                    android:layout_weight="1"
+                    android:background="@drawable/search_edt_bg"
+                    android:gravity="center_vertical"
+                    android:onClick="@{()->model.goSearch()}"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="13dp"
+                        android:src="@drawable/ico_search" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="19dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="搜索你需要的商品或商铺"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:drawablePadding="4dp"
+                    android:onClick="@{()->model.goMsg()}"
+                    android:padding="5dp"
+                    android:drawableTop="@drawable/icon_msg"
+                    android:text="消息"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_10"
+                    app:msgNum="@{model.newsNum}" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/home_top_bg" />
+
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/refresh_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/left_right_margin"
+                android:paddingLeft="@dimen/left_right_margin"
+                android:paddingRight="@dimen/left_right_margin">
+
+                <com.wbg.xigui.widget.MyScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/bg_rice">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="130dp"
+                                app:cardBackgroundColor="@color/transparent"
+                                app:cardCornerRadius="4dp"
+                                app:cardElevation="2.7dp">
+
+                                <com.youth.banner.Banner
+                                    android:id="@+id/banner_good_store"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/white"
+                                    app:bannerUrls="@{model.bannerList}"
+                                    app:indicator_drawable_selected="@drawable/iv_guide_point_select"
+                                    app:indicator_drawable_unselected="@drawable/iv_guide_point_normal"
+                                    app:indicator_margin="4.7dp" />
+                            </androidx.cardview.widget.CardView>
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/left_right_margin"
+                            android:layout_marginRight="@dimen/left_right_margin"
+                            android:background="@color/bg_rice"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="@dimen/left_right_margin">
+
+                            <View
+                                android:layout_width="6dp"
+                                android:layout_height="12dp"
+                                android:background="@drawable/home_news_left" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:text="喜归快报"
+                                android:textColor="@color/text_black"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <com.wbg.xigui.widget.UPMarqueeView
+                                android:id="@+id/news_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/type_good_white_corner_bg">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:drawableLeft="@drawable/icon_jing"
+                                    android:drawablePadding="5dp"
+                                    android:text="精品推荐"
+                                    android:textColor="@color/text_black"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <com.wbg.xigui.widget.MyRecyclerView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="2.5dp"
+                                    android:paddingRight="2.5dp"
+                                    app:adapter="@{model.jingAdapter}"
+                                    app:itemBinding="@{model.jingBinding}"
+                                    app:items="@{model.jingList}"
+                                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                                    app:spanCount="2" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/left_right_margin"
+                            android:background="@drawable/type_good_white_corner_bg">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:drawableLeft="@drawable/icon_type_other"
+                                    android:drawablePadding="5dp"
+                                    android:text="吃喝玩乐"
+                                    android:textColor="@color/text_black"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <com.wbg.xigui.widget.MyRecyclerView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="2.5dp"
+                                    android:paddingRight="2.5dp"
+                                    app:adapter="@{model.playAdapter}"
+                                    app:itemBinding="@{model.playBinding}"
+                                    app:items="@{model.playList}"
+                                    app:layoutManager="@{model.playLayoutManager}" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/left_right_margin"
+                            android:background="@drawable/type_good_white_corner_bg">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:drawableLeft="@drawable/icon_type_other"
+                                    android:drawablePadding="5dp"
+                                    android:text="热门商品"
+                                    android:textColor="@color/text_black"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <com.wbg.xigui.widget.MyRecyclerView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:paddingLeft="2.5dp"
+                                    android:paddingRight="2.5dp"
+                                    android:scrollbarSize="3dp"
+                                    android:scrollbarThumbHorizontal="@drawable/scrollbar_horizontal"
+                                    android:scrollbarTrackHorizontal="@drawable/scrollbar_horizontal_bg"
+                                    android:scrollbars="horizontal"
+                                    app:adapter="@{model.hotAdapter}"
+                                    app:itemBinding="@{model.hotBinding}"
+                                    app:items="@{model.hotList}"
+                                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.wbg.xigui.widget.MyScrollView>
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+        </FrameLayout>
+    </LinearLayout>
+</layout>

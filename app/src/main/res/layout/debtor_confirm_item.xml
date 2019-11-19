@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:background="@color/white"
+              android:layout_height="wrap_content">
+
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/bg_rice"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+        <com.wbg.xigui.widget.XTextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:text="债权人"
+                android:gravity="center|left"
+                android:layout_marginLeft="@dimen/left_right_margin"
+                android:textSize="15sp"
+                android:textColor="@color/text_black"
+                />
+
+        <TextView
+                android:id="@+id/delete_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="?android:selectableItemBackground"
+                android:layout_marginRight="@dimen/left_right_margin"
+                android:paddingRight="@dimen/left_right_margin"
+                android:paddingLeft="@dimen/left_right_margin"
+                android:text="删除"
+                android:textColor="@color/theme"
+                android:textSize="12sp"/>
+    </LinearLayout>
+
+    <include layout="@layout/line"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="@dimen/left_right_margin"
+            android:paddingRight="@dimen/left_right_margin"
+            android:gravity="center_vertical">
+
+        <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_black"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:text="姓名"/>
+
+        <EditText
+                android:id="@+id/creditor_name_edt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:textSize="15sp"
+                android:maxLines="1"
+                android:gravity="end|center_vertical"
+                android:textColor="@color/text_black"
+                android:textColorHint="@color/hint_color"
+                android:hint="请输入姓名"
+                />
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="@dimen/left_right_margin"
+            android:paddingRight="@dimen/left_right_margin"
+            android:gravity="center_vertical">
+
+        <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_black"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:text="身份证号"/>
+
+        <EditText
+                android:id="@+id/creditor_id_num_edt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:textSize="15sp"
+                android:inputType="number"
+                android:maxLines="1"
+                android:gravity="end|center_vertical"
+                android:textColor="@color/text_black"
+                android:textColorHint="@color/hint_color"
+                android:hint="请输入身份证号码"
+                />
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="@dimen/left_right_margin"
+            android:paddingRight="@dimen/left_right_margin"
+            android:gravity="center_vertical">
+
+        <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_black"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:text="手机号"/>
+
+        <EditText
+                android:id="@+id/creditor_phone_edt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:textSize="15sp"
+                android:maxLines="1"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:gravity="end|center_vertical"
+                android:textColor="@color/text_black"
+                android:textColorHint="@color/hint_color"
+                android:hint="请输入手机号码"
+                />
+    </LinearLayout>
+
+</LinearLayout>

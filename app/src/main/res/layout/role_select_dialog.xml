@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:background="@drawable/dialog_bg">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="选择身份"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:textColor="#ff333333"
+                android:textSize="17sp"/>
+
+        <Button
+                android:id="@+id/one"
+                android:layout_width="100dp"
+                android:layout_height="26dp"
+                android:background="@drawable/code_btn"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/theme"
+                android:text="债权人"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+        <Button
+                android:id="@+id/two"
+                android:layout_width="100dp"
+                android:layout_height="26dp"
+                android:background="@drawable/code_btn"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/theme"
+                android:text="债务人"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+        <Button
+                android:id="@+id/three"
+                android:layout_width="100dp"
+                android:layout_height="26dp"
+                android:background="@drawable/code_btn"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/theme"
+                android:text="代理商"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+        <Button
+                android:id="@+id/four"
+                android:layout_width="100dp"
+                android:layout_height="26dp"
+                android:background="@drawable/code_btn"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/theme"
+                android:text="商家"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+    </LinearLayout>
+</LinearLayout>

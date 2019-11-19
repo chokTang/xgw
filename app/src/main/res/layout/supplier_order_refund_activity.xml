@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+                name="model"
+                type="com.wbg.xigui.viewmodel.SupplierOrderRefundViewModel"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto"
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+
+        <FrameLayout
+                android:id="@+id/top_title_fl"
+                android:background="@drawable/order_top_bg"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="44dp">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:gravity="center"
+                    android:textSize="17sp"
+                    android:text="申请退货"
+                    android:textColor="@color/white"
+                    />
+
+            <RelativeLayout
+                    android:id="@+id/back_area"
+                    android:layout_width="38dp"
+                    android:background="?android:selectableItemBackgroundBorderless"
+                    android:layout_height="match_parent">
+
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/icon_back"/>
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="144dp"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/order_refund_top">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="退货"
+                            android:layout_marginLeft="30dp"
+                            android:textColor="#ffffffff"
+                            android:textSize="17sp"
+                            />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/left_right_margin"
+                        android:paddingRight="@dimen/left_right_margin"
+                        android:paddingTop="18dp"
+                        android:paddingBottom="18dp"
+                        android:orientation="horizontal">
+
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_address"/>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:orientation="vertical">
+
+                        <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="胡歌"
+                                    android:textColor="#ff333333"
+                                    android:textSize="14sp"
+                                    />
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="189*****999"
+                                    android:layout_marginLeft="9dp"
+                                    android:textColor="#ff999999"
+                                    android:textSize="14sp"
+                                    />
+                        </LinearLayout>
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:includeFontPadding="false"
+                                android:text="重庆 重庆市 渝中区 大坪街道 英利国际大厦2号楼3801"
+                                android:textColor="#ff333333"
+                                android:textSize="15sp"
+                                />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <include layout="@layout/rice_divider"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/left_right_margin"
+                        android:layout_marginRight="@dimen/left_right_margin"
+                        android:orientation="horizontal">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@mipmap/ic_launcher"
+                            app:riv_corner_radius="3dp"/>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="11dp"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:lines="2"
+                                android:ellipsize="end"
+                                android:text="中啡美式无糖速溶冷萃纯黑咖啡粉黑咖啡粉黑咖啡粉"
+                                android:textColor="#ff333333"
+                                android:textSize="15sp"
+                                />
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="15dp"
+                                android:orientation="horizontal"
+                                >
+
+                            <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textColor="#ffff203a"
+                                    android:textSize="15sp"
+                                    />
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="共计1件，合计¥18.30（免运费）"
+                                    android:textColor="#ff808080"
+                                    android:textSize="12sp"
+                                    />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <include layout="@layout/line_margin_left_right"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/left_right_margin"
+                        android:layout_marginTop="12dp"
+                        android:text="退货理由"
+                        android:textColor="#ff333333"
+                        android:textSize="15sp"
+                        />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/left_right_margin"
+                        android:layout_marginTop="10dp"
+                        android:text="大小不合适"
+                        android:textColor="#ff999999"
+                        android:textSize="12sp"
+                        />
+
+                <androidx.recyclerview.widget.RecyclerView
+                        app:itemBinding="@{model.binding}"
+                        app:items="@{model.list}"
+                        app:adapter="@{model.adapter}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginBottom="10dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                <include layout="@layout/line_margin_left_right"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                    <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="同意申请"
+                                android:textColor="#ffff203a"
+                                android:textSize="15sp"/>
+                    </FrameLayout>
+
+                    <View
+                            android:layout_width="1dp"
+                            android:layout_height="25dp"
+                            android:background="@color/line_color"/>
+
+                    <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="拒绝申请"
+                                android:textColor="#ffff203a"
+                                android:textSize="15sp"/>
+                    </FrameLayout>
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/bg_rice"/>
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:background="@color/theme">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="联系买家"
+                    android:drawableLeft="@drawable/icon_call_buyer_white"
+                    android:drawablePadding="3dp"
+                    android:textColor="#fffefefe"
+                    android:textSize="15sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

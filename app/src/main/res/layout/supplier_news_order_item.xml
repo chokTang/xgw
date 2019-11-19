@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+                name="bean"
+                type="com.wbg.xigui.bean.SupplierNewsBean"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto"
+                  android:orientation="vertical"
+                  android:background="@color/white"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="@dimen/left_right_margin"
+                android:layout_marginRight="@dimen/left_right_margin"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="4dp"
+                    android:drawableLeft="@drawable/icon_order"
+                    android:text="@{bean.updateTime}"
+                    android:textColor="#ff808080"
+                    android:textSize="12sp"
+                    />
+
+            <TextView
+                    android:id="@+id/state_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="已付款"
+                    android:textColor="#ff333333"
+                    android:textSize="12sp"
+                    />
+        </LinearLayout>
+
+        <include layout="@layout/line_margin_left_right"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="@dimen/left_right_margin"
+                android:layout_marginRight="@dimen/left_right_margin"
+                android:orientation="horizontal">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                    app:url="@{bean.thumbnail}"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:riv_corner_radius="3dp"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11dp"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/name_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lines="2"
+                        android:ellipsize="end"
+                        android:textColor="#ff333333"
+                        android:textSize="15sp"
+                        />
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal"
+                        >
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="#ffff203a"
+                            android:textSize="15sp"
+                            />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{`共计`+bean.number+`件，合计¥`+bean.amount+`（免运费）`}"
+                            android:textColor="#ff808080"
+                            android:textSize="12sp"
+                            />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <include layout="@layout/line_margin_left_right"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="@dimen/left_right_margin"
+                android:layout_marginLeft="@dimen/left_right_margin"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="2019-04-21  13:15"
+                    android:drawablePadding="4dp"
+                    android:drawableLeft="@drawable/icon_time_grey"
+                    android:textColor="#ff808080"
+                    android:textSize="9sp"
+                    />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{`物流单号：`+bean.trackingNo}"
+                    android:textColor="#ff808080"
+                    android:textSize="9sp"
+                    />
+        </LinearLayout>
+
+        <include layout="@layout/rice_divider"/>
+    </LinearLayout>
+</layout>

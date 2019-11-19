@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:maxHeight="350dp"
+              android:adjustViewBounds="true"
+              android:paddingLeft="@dimen/left_right_margin"
+              android:background="@color/white">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginRight="@dimen/left_right_margin"
+            android:layout_height="60dp">
+
+        <ImageView
+                android:id="@+id/close_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_close_black"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="选择银行卡"
+                android:layout_centerInParent="true"
+                android:textColor="#ff333333"
+                android:textSize="16sp"
+                />
+
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+
+    <TextView
+            android:id="@+id/add_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="添加其他银行卡"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="@dimen/left_right_margin"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ff333333"
+            android:textSize="16sp"
+            />
+</LinearLayout>

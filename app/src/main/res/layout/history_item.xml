@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+                name="bean"
+                type="com.wbg.xigui.bean.HistoryBean"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/word_tv"
+                android:layout_width="match_parent"
+                android:gravity="center_vertical"
+                android:background="?android:selectableItemBackground"
+                android:paddingLeft="@dimen/left_right_margin"
+                android:paddingRight="@dimen/left_right_margin"
+                android:textSize="12sp"
+                android:lines="1"
+                android:ellipsize="end"
+                android:textColor="@color/text_black"
+                android:text="@{bean.word}"
+                android:layout_height="40dp"/>
+
+        <include layout="@layout/line"/>
+    </LinearLayout>
+</layout>

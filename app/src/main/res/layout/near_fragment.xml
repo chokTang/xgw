@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+                name="model"
+                type="com.wbg.xigui.viewmodel.NearViewModel"/>
+
+        <import type="android.view.View"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto"
+                  android:orientation="vertical"
+                  android:background="@color/bg_rice"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:background="@color/theme"
+                android:layout_height="50dp">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/left_right_margin"
+                    android:paddingRight="@dimen/left_right_margin"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    >
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:text="重庆"
+                        android:drawablePadding="5dp"
+                        android:drawableLeft="@drawable/icon_location"/>
+
+                <LinearLayout
+                        android:onClick="@{()->model.goSearch()}"
+                        android:layout_width="0dp"
+                        android:layout_height="32dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_edt_bg"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="13dp"
+                            android:src="@drawable/ico_search"/>
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:layout_height="match_parent"
+                            android:hint="搜索你需要的商品或商铺"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="19dp"
+                            android:background="@null"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/refresh_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <com.wbg.xigui.widget.MyScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:orientation="horizontal"
+                            android:layout_marginLeft="@dimen/left_right_margin"
+                            android:layout_marginRight="@dimen/left_right_margin"
+                            android:paddingTop="10dp"
+                            >
+
+                        <TextView
+                                android:onClick="@{()->model.goType()}"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_black"
+                                android:text="美食"
+                                android:gravity="center"
+                                android:drawablePadding="-5dp"
+                                android:drawableTop="@drawable/icon_meishi"/>
+
+                        <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1"/>
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_black"
+                                android:text="超市"
+                                android:gravity="center"
+                                android:drawablePadding="-5dp"
+                                android:drawableTop="@drawable/icon_chaoshi"/>
+
+                        <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1"/>
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_black"
+                                android:text="酒店"
+                                android:gravity="center"
+                                android:drawablePadding="-5dp"
+                                android:drawableTop="@drawable/icon_jiudian"/>
+
+                        <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1"/>
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_black"
+                                android:text="娱乐"
+                                android:gravity="center"
+                                android:drawablePadding="-5dp"
+                                android:drawableTop="@drawable/icon_yule"/>
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            />
+
+                        <com.gouwu.ui.view.HomeIndicator
+                            android:id="@+id/indicator_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"/>
+
+                    </LinearLayout>
+
+
+                    <androidx.cardview.widget.CardView
+                            android:id="@+id/card_view"
+                            android:visibility="@{model.bannerList.size()>0?View.VISIBLE:View.GONE}"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginLeft="@dimen/left_right_margin"
+                            android:layout_marginRight="@dimen/left_right_margin"
+                            app:cardCornerRadius="4dp"
+                            app:cardBackgroundColor="@color/transparent"
+                            app:cardElevation="2.7dp"
+                            >
+
+                        <com.youth.banner.Banner
+                                app:bannerUrls="@{model.bannerList}"
+                                android:id="@+id/banner_good_store"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                app:indicator_drawable_selected="@drawable/iv_guide_point_select"
+                                app:indicator_drawable_unselected="@drawable/iv_guide_point_normal"
+                                app:indicator_margin="4.7dp"
+                                />
+                    </androidx.cardview.widget.CardView>
+
+                    <com.wbg.xigui.widget.MyRecyclerView
+                            android:layout_marginTop="15dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:itemBinding="@{model.binding}"
+                            app:items="@{model.list}"
+                            app:adapter="@{model.adapter}"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </com.wbg.xigui.widget.MyScrollView>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="9dp"
+              android:layout_marginRight="9dp"
+              android:orientation="vertical">
+
+    <TextView
+            android:id="@+id/word_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="23dp"
+            android:background="@drawable/history_word_bg"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxEms="8"
+            android:minWidth="44dp"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:singleLine="true"
+            android:text="精油"
+            android:textColor="@color/text_black"
+            android:textSize="12sp"/>
+</LinearLayout>

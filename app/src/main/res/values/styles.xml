@@ -1,0 +1,77 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textViewStyle">@style/textView</item>
+    </style>
+
+    <style name="textView" parent="android:Widget.Holo.TextView">
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+
+    <!--基础的DialogFragment样式-->
+    <style name="BaseDialogFragmentStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+
+    <!-- ActionSheet进出动画 从下往上 -->
+    <style name="ActionSheetDialogAnimation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/bottom_to_center</item>
+        <item name="android:windowExitAnimation">@anim/center_to_bottom</item>
+    </style>
+
+    <!--dialog对话样式集结束-->
+    <style name="FromBottomToTop" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/bottom_to_center</item>
+        <item name="android:windowExitAnimation">@anim/center_to_top</item>
+    </style>
+
+    <style name="FromTopToTop" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/top_to_center</item>
+        <item name="android:windowExitAnimation">@anim/center_to_top</item>
+    </style>
+
+    <style name="FromTopToBottom" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/top_to_center</item>
+        <item name="android:windowExitAnimation">@anim/center_to_bottom</item>
+    </style>
+
+    <style name="FromRightToRight" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/right_to_center</item>
+        <item name="android:windowExitAnimation">@anim/center_to_right</item>
+    </style>
+
+    <style name="FromRightToLeft" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/right_to_center</item>
+        <item name="android:windowExitAnimation">@anim/center_to_left</item>
+    </style>
+
+    <style name="FromLeftToLeft" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/left_to_center</item>
+        <item name="android:windowExitAnimation">@anim/center_to_left</item>
+    </style>
+
+    <style name="FromLeftToRight" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/left_to_center</item>
+        <item name="android:windowExitAnimation">@anim/center_to_right</item>
+    </style>
+
+    <style name="centerIn" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/center_in</item>
+        <item name="android:windowExitAnimation">@anim/center_out</item>
+    </style>
+    <!--dialog对话样式集结束-->
+
+
+
+
+
+</resources>

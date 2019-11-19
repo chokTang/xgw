@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="model"
+                type="com.wbg.xigui.viewmodel.DebtorRepayViewModel"/>
+    </data>
+
+    <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:background="@color/bg_rice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <FrameLayout
+                android:id="@+id/top_area"
+                android:layout_width="match_parent"
+                android:layout_height="120dp">
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="@drawable/xgw_top_bg"/>
+
+            <ImageView
+                    android:onClick="@{()->model.goMsg()}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:msgNum="@{model.newsNum}"
+                    android:padding="5dp"
+                    android:layout_gravity="right"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/icon_debtor_msg"/>
+        </FrameLayout>
+
+        <View
+                android:id="@+id/top"
+                android:layout_width="match_parent"
+                android:layout_alignBottom="@+id/top_area"
+                android:layout_marginBottom="15dp"
+                android:layout_height="1dp"/>
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignTop="@+id/top"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="@dimen/left_right_margin"
+                android:layout_marginRight="@dimen/left_right_margin"
+                android:background="@drawable/corner_10dp_white"
+                android:orientation="vertical">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="偿还进度"
+                    android:layout_marginLeft="@dimen/left_right_margin"
+                    android:layout_marginTop="@dimen/left_right_margin"
+                    android:textColor="#ff333333"
+                    android:textSize="15sp"
+                    />
+
+            <com.wbg.xigui.widget.MyScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+                <com.wbg.xigui.widget.MyRecyclerView
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:items="@{model.list}"
+                        app:itemBinding="@{model.binding}"
+                        app:adapter="@{model.adapter}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/left_right_margin"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="vertical"/>
+            </com.wbg.xigui.widget.MyScrollView>
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

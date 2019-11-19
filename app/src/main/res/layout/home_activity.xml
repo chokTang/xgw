@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+                name="model"
+                type="com.wbg.xigui.viewmodel.HomeViewModel"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+
+        <FrameLayout
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@color/white"
+                android:layout_height="60dp">
+
+            <TextView
+                    android:id="@+id/home_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="10sp"
+                    android:textColor="@color/tab_text"
+                    android:drawableTop="@drawable/icon_fragment_home"
+                    android:text="首页"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:onClick="@{()->model.changeFragment(0)}"
+                    android:background="?android:selectableItemBackgroundBorderless"/>
+
+            <TextView
+                    android:id="@+id/near_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="10sp"
+                    android:drawablePadding="5dp"
+                    android:textColor="@color/tab_text"
+                    android:drawableTop="@drawable/icon_fragment_near"
+                    android:text="周边"
+                    android:onClick="@{()->model.changeFragment(1)}"
+                    android:gravity="center"
+                    android:background="?android:selectableItemBackgroundBorderless"/>
+
+            <TextView
+                    android:id="@+id/type_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="10sp"
+                    android:drawablePadding="5dp"
+                    android:textColor="@color/tab_text"
+                    android:drawableTop="@drawable/icon_fragment_type"
+                    android:text="分类"
+                    android:onClick="@{()->model.changeFragment(2)}"
+                    android:gravity="center"
+                    android:background="?android:selectableItemBackgroundBorderless"/>
+
+            <TextView
+                    android:id="@+id/shop_cart_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="10sp"
+                    android:drawablePadding="5dp"
+                    android:textColor="@color/tab_text"
+                    android:drawableTop="@drawable/icon_fragment_shopcart"
+                    android:text="购物车"
+                    android:onClick="@{()->model.changeFragment(3)}"
+                    android:gravity="center"
+                    android:background="?android:selectableItemBackgroundBorderless"/>
+
+            <TextView
+                    android:id="@+id/mine_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="10sp"
+                    android:drawablePadding="5dp"
+                    android:textColor="@color/tab_text"
+                    android:drawableTop="@drawable/icon_fragment_mine"
+                    android:text="我的"
+                    android:gravity="center"
+                    android:onClick="@{()->model.changeFragment(4)}"
+                    android:background="?android:selectableItemBackgroundBorderless"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

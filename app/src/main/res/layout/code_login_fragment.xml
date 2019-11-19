@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+                name="model"
+                type="com.wbg.xigui.viewmodel.CodeLoginViewModel"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="vertical"
+                  android:background="@color/white"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="26sp"
+                android:textColor="@color/text_black"
+                android:text="短信登录"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/left_right_margin"
+                android:layout_marginTop="40dp"
+                android:includeFontPadding="false"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginLeft="@dimen/left_right_margin"
+                android:layout_marginRight="@dimen/left_right_margin"
+                android:layout_marginTop="35dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+            <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="+86"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@color/text_black"/>
+
+            <EditText
+                    android:id="@+id/phone_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_black"
+                    android:hint="请输入手机号"
+                    android:text="@={model.phone}"
+                    android:inputType="phone"
+                    android:textSize="15sp"
+                    android:maxLength="11"
+                    android:background="@null"
+                    android:maxLines="1"/>
+        </LinearLayout>
+
+        <include layout="@layout/line_margin_left_right"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginLeft="@dimen/left_right_margin"
+                android:layout_marginRight="@dimen/left_right_margin"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+            <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="验证码"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="@color/text_black"/>
+
+            <EditText
+                    android:id="@+id/code_edt"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_black"
+                    android:hint="请输入验证码"
+                    android:text="@={model.code}"
+                    android:inputType="number"
+                    android:textSize="15sp"
+                    android:maxLength="11"
+                    android:background="@null"
+                    android:maxLines="1"/>
+
+            <Button
+                    android:id="@+id/send_code_btn"
+                    android:layout_width="100dp"
+                    android:layout_height="26dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/code_btn"
+                    android:text="发送验证码"
+                    android:background="@drawable/code_btn"/>
+        </LinearLayout>
+
+        <include layout="@layout/line_margin_left_right"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:includeFontPadding="false"
+                android:text="温馨提示：未注册的手机号，登录时将自动注册"
+                android:textColor="#ffa0a0a0"
+                android:layout_marginLeft="30dp"
+                android:textSize="12sp"
+                />
+
+        <Button
+                android:id="@+id/login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:textSize="17sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="@dimen/left_right_margin"
+                android:layout_marginRight="@dimen/left_right_margin"
+                android:text="登录"
+                android:background="@drawable/theme_btn_bg"/>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="登录喜归网代表同意"
+                    android:textColor="#ffa0a0a0"
+                    android:textSize="12sp"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="《用户服务协议》"
+                    android:textColor="@color/theme"
+                    android:textSize="12sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="bean"
+                type="com.wbg.xigui.bean.AccountRightBean"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_marginBottom="15dp"
+                  android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/head_ps"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="@color/bg_rice"
+                android:text="已确权"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="4dp"
+                android:textColor="#ff333333"
+                android:textSize="15sp"/>
+
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                    <com.wbg.xigui.widget.CircleImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            app:url="@{bean.obligorIcon}"
+                            android:src="@mipmap/ic_launcher"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{bean.obligorUserName}"
+                            android:layout_marginTop="3dp"
+                            android:textColor="#ff333333"
+                            android:textSize="12sp"
+                            />
+                </LinearLayout>
+
+                <com.wbg.xigui.widget.MySeekBar
+                        android:id="@+id/seek_bar"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+
+                <TextView
+                        android:id="@+id/priority_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@drawable/icon_check_selector"
+                        android:drawablePadding="8dp"
+                        android:text="优先还"
+                        android:textColor="#ff333333"
+                        android:textSize="9sp"/>
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/complete_tv"
+                    android:layout_width="70dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/settle_bg"
+                    android:gravity="center"
+                    android:text="完成结清合同"
+                    android:textColor="#ffffffff"
+                    android:textSize="9sp"
+                    android:layout_gravity="center_horizontal|bottom"
+                    />
+        </FrameLayout>
+    </LinearLayout>
+</layout>

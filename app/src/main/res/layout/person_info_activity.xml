@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="model"
+                type="com.wbg.xigui.viewmodel.PersonInfoViewModel"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="vertical"
+                  android:background="@color/white"
+                  android:gravity="center_horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+
+        <LinearLayout
+                android:id="@+id/head_ll"
+                android:layout_marginTop="17dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="21dp"
+                android:orientation="vertical">
+
+            <com.wbg.xigui.widget.CircleImageView
+                    app:url="@{model.imgUrl}"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="更换头像"
+                    android:textColor="#ffff203a"
+                    android:textSize="15sp"
+                    />
+        </LinearLayout>
+
+        <include layout="@layout/line"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingRight="@dimen/left_right_margin"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="昵      称"
+                    android:layout_marginLeft="@dimen/left_right_margin"
+                    android:textColor="#ff333333"
+                    android:textSize="17sp"/>
+
+            <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="20dp"
+                    android:background="@color/white"
+                    android:hint="请设置昵称"
+                    android:text="@={model.nickName}"
+                    android:textSize="15sp"
+                    android:textColorHint="@color/hint_color"
+                    android:textColor="@color/text_black"/>
+
+            <TextView
+                    android:id="@+id/error_ps_tv"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/icon_gth"
+                    android:text="未设置"
+                    android:drawablePadding="5dp"
+                    android:textColor="#ffff203a"
+                    android:textSize="12sp"/>
+        </LinearLayout>
+
+        <include layout="@layout/line_left_margin"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingRight="@dimen/left_right_margin"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="当前账号"
+                    android:layout_marginLeft="@dimen/left_right_margin"
+                    android:textColor="#ff333333"
+                    android:textSize="17sp"/>
+
+            <TextView
+                    android:id="@+id/phone_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="20dp"
+                    android:text="199*****699"
+                    android:textSize="15sp"
+                    android:textColor="@color/hint_color"/>
+
+        </LinearLayout>
+
+        <include layout="@layout/rice_divider"/>
+
+        <LinearLayout
+                android:id="@+id/ll_update_password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingRight="@dimen/left_right_margin"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="修改密码"
+                    android:layout_marginLeft="@dimen/left_right_margin"
+                    android:textColor="#ff333333"
+                    android:textSize="17sp"/>
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="15sp"
+                    android:textColor="@color/hint_color"/>
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_enter"/>
+
+        </LinearLayout>
+
+        <include layout="@layout/line_left_margin"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingRight="@dimen/left_right_margin"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="实名认证"
+                    android:layout_marginLeft="@dimen/left_right_margin"
+                    android:textColor="#ff333333"
+                    android:textSize="17sp"/>
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="15sp"
+                    android:textColor="@color/hint_color"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="已实名"
+                    android:textColor="#ffff203a"
+                    android:textSize="12sp"/>
+
+        </LinearLayout>
+
+        <include layout="@layout/line"/>
+    </LinearLayout>
+</layout>

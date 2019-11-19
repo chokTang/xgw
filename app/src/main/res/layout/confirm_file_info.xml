@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:focusableInTouchMode="false"
+              android:focusable="false"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+            android:id="@+id/has_file_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:paddingLeft="@dimen/left_right_margin"
+                android:paddingRight="@dimen/left_right_margin"
+                android:gravity="center_vertical">
+
+            <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_black"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:text="文书编号"/>
+
+            <EditText
+                    android:id="@+id/file_num_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:textSize="15sp"
+                    android:maxLines="1"
+                    android:gravity="end|center_vertical"
+                    android:textColor="@color/text_black"
+                    android:textColorHint="@color/hint_color"
+                    android:hint="例如：（2013）民申字第2214号"
+                    />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:paddingLeft="@dimen/left_right_margin"
+                android:paddingRight="@dimen/left_right_margin"
+                android:gravity="center_vertical">
+
+            <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_black"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:text="判决法院"/>
+
+            <EditText
+                    android:id="@+id/court_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:textSize="15sp"
+                    android:maxLines="1"
+                    android:gravity="end|center_vertical"
+                    android:textColor="@color/text_black"
+                    android:textColorHint="@color/hint_color"
+                    android:hint="最高人民法院"
+                    />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:paddingLeft="@dimen/left_right_margin"
+                android:paddingRight="@dimen/left_right_margin"
+                android:gravity="center_vertical">
+
+            <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_black"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:text="金额"/>
+
+            <EditText
+                    android:id="@+id/has_file_amount_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:textSize="15sp"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:gravity="end|center_vertical"
+                    android:textColor="@color/text_black"
+                    android:textColorHint="@color/hint_color"
+                    android:hint="债务金额xx元"
+                    />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:paddingLeft="@dimen/left_right_margin"
+                android:paddingRight="@dimen/left_right_margin"
+                android:gravity="center_vertical">
+
+            <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_black"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:text="判决日期"/>
+
+            <TextView
+                    android:id="@+id/date_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:textSize="15sp"
+                    android:maxLines="1"
+                    android:gravity="end|center_vertical"
+                    android:textColor="@color/text_black"
+                    android:textColorHint="@color/hint_color"
+                    android:hint="2017-04-27"
+                    />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:paddingLeft="@dimen/left_right_margin"
+                android:paddingRight="@dimen/left_right_margin"
+                android:gravity="center_vertical">
+
+            <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_black"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:text="利率"/>
+
+            <EditText
+                    android:id="@+id/rate_edt"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:textSize="15sp"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    android:gravity="end|center_vertical"
+                    android:textColor="@color/text_black"
+                    android:textColorHint="@color/hint_color"
+                    android:hint="24"
+                    android:text="24"
+                    />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:maxLines="1"
+                    android:text="%"
+                    android:gravity="end|center_vertical"
+                    android:textColor="@color/text_black"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/no_file_ll"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:paddingLeft="@dimen/left_right_margin"
+                android:paddingRight="@dimen/left_right_margin"
+                android:gravity="center_vertical">
+
+            <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_black"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:text="金额"/>
+
+            <EditText
+                    android:id="@+id/no_file_amount_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:background="@null"
+                    android:textSize="15sp"
+                    android:maxLines="1"
+                    android:gravity="end|center_vertical"
+                    android:textColor="@color/text_black"
+                    android:textColorHint="@color/hint_color"
+                    android:hint="债务金额xx元"
+                    />
+        </LinearLayout>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/bg_rice"/>
+
+        <com.wbg.xigui.widget.XTextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="添加照片"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/left_right_margin"
+                android:textSize="15sp"
+                android:textColor="@color/text_black"
+                />
+
+        <include layout="@layout/line"/>
+
+        <ImageView
+                android:id="@+id/file_img"
+                android:layout_width="345dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="11dp"
+                android:src="@drawable/file_info_img"
+                android:scaleType="centerCrop"
+                />
+    </LinearLayout>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/bg_rice"/>
+
+
+</LinearLayout>

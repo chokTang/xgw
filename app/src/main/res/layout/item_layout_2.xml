@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tool="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:background="@color/white"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:padding="@dimen/activity_horizontal_margin">
+
+    <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tool:text="苹果8p中移动 Apple/苹果 iPhone 8 Plus全网通4G手机全新未拆苹果8plus"
+            android:textColor="#ff333333"
+            android:textSize="@dimen/sp_16"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/activity_vertical_margin">
+
+        <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tool:text="¥4480.00"
+                android:lines="1"
+                android:textColor="#ffff203a"
+                android:textSize="@dimen/sp_16"/>
+
+        <TextView
+                android:id="@+id/tv_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tool:text="兑换比例：10%"
+                android:lines="1"
+                android:textColor="#ff999999"
+                android:textSize="@dimen/sp_12"/>
+    </LinearLayout>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/dividerColor"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            />
+
+    <!--优惠券-->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:orientation="horizontal">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="领劵"
+                android:textColor="#ffff203a"
+                android:textSize="@dimen/sp_12"/>
+
+        <TextView
+                android:id="@+id/tv_coupon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tool:text="50元优惠券"
+                android:textColor="#ff333333"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:textSize="@dimen/dp_10"/>
+
+        <LinearLayout
+                android:id="@+id/ll_right"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                >
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_point_3"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--满减-->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="满减"
+                android:textColor="#ffff203a"
+                android:textSize="@dimen/sp_12"/>
+
+        <TextView
+                android:id="@+id/tv_manjian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tool:text="满100减5/满200减10"
+                android:textColor="#ff333333"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:textSize="@dimen/dp_10"/>
+
+    </LinearLayout>
+</LinearLayout>

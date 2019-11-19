@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/icon_bg_share"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/img_code"
+        android:layout_width="165dp"
+        android:layout_height="165dp"
+        android:src="@mipmap/default_pic"
+        android:layout_marginTop="360dp"
+        />
+</LinearLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+                name="model"
+                type="com.wbg.xigui.viewmodel.SupplierNewsViewModel"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="vertical"
+                  android:background="@color/bg_rice"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+
+        <LinearLayout
+                android:id="@+id/top_title_fl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/order_top_bg"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/title_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:text="消息"
+                    android:gravity="center"
+                    android:textSize="17sp"
+                    android:textColor="@color/white"
+                    />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/supplier_news_top_selector"
+                android:layout_marginLeft="@dimen/left_right_margin"
+                android:layout_marginRight="@dimen/left_right_margin"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/all_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textColor="@color/black_white"
+                    android:onClick="@{()->model.changeFragment(0)}"
+                    android:text="重要通知"
+                    android:background="@drawable/supplier_news_top_selector"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    />
+
+            <TextView
+                    android:id="@+id/order_tv"
+                    android:onClick="@{()->model.changeFragment(1)}"
+                    android:layout_width="0dp"
+                    android:background="@drawable/supplier_news_top_selector"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/black_white"
+                    android:textSize="14sp"
+                    android:text="订单通知"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    />
+
+            <TextView
+                    android:id="@+id/other_tv"
+                    android:background="@drawable/supplier_news_top_selector"
+                    android:onClick="@{()->model.changeFragment(2)}"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/black_white"
+                    android:textSize="14sp"
+                    android:text="其他通知"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    />
+        </LinearLayout>
+
+        <FrameLayout
+                android:id="@+id/content"
+                android:layout_marginTop="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+    </LinearLayout>
+</layout>

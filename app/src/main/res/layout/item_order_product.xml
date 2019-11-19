@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tool="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <TextView
+            android:id="@+id/tv_shop_name"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            tool:text="美的官方旗舰店"
+            android:drawableLeft="@mipmap/icon_shop"
+            android:drawablePadding="6dp"
+            android:gravity="center_vertical"
+            android:textColor="#ff666666"
+            android:textSize="@dimen/sp_12"
+            />
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_shop_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+</LinearLayout>

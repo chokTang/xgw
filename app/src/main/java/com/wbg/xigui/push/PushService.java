@@ -1,0 +1,7 @@
+package com.wbg.xigui.push;
+
+import cn.jpush.android.service.JCommonService;
+
+public class PushService extends JCommonService {
+
+}

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+                name="model"
+                type="com.wbg.xigui.viewmodel.SupplierHomeViewModel"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+
+        <FrameLayout
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@color/white"
+                android:layout_height="60dp">
+
+            <TextView
+                    android:id="@+id/store_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="10sp"
+                    android:textColor="@color/tab_text"
+                    android:drawableTop="@drawable/icon_fragment_supplier_store"
+                    android:text="商家"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:onClick="@{()->model.changeFragment(0)}"
+                    android:background="?android:selectableItemBackgroundBorderless"/>
+
+            <TextView
+                    android:id="@+id/msg_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="10sp"
+                    android:drawablePadding="5dp"
+                    android:textColor="@color/tab_text"
+                    android:drawableTop="@drawable/icon_fragment_supplier_msg"
+                    android:text="消息"
+                    android:onClick="@{()->model.changeFragment(1)}"
+                    android:gravity="center"
+                    android:background="?android:selectableItemBackgroundBorderless"/>
+
+            <TextView
+                    android:id="@+id/mine_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="10sp"
+                    android:drawablePadding="5dp"
+                    android:textColor="@color/tab_text"
+                    android:drawableTop="@drawable/icon_home_agent_mine_selector"
+                    android:text="我的"
+                    android:onClick="@{()->model.changeFragment(2)}"
+                    android:gravity="center"
+                    android:background="?android:selectableItemBackgroundBorderless"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

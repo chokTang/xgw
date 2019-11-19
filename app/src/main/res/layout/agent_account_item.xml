@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:paddingRight="@dimen/left_right_margin"
+                android:paddingLeft="@dimen/left_right_margin"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+            <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/type_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="提现"
+                        android:textColor="#ffff203a"
+                        android:textSize="15sp"
+                        />
+
+                <TextView
+                        android:id="@+id/time_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="2019-06-19  12:20:30"
+                        android:textColor="#ffaaaaaa"
+                        android:textSize="12sp"
+                        />
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/amount_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-¥200.00"
+                    android:textColor="#ffff203a"
+                    android:textSize="15sp"
+                    />
+        </LinearLayout>
+
+        <include layout="@layout/line_left_margin"/>
+    </LinearLayout>
+</layout>

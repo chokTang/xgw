@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.wbg.xigui.viewmodel.ApplyWithdrawalViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_rice"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/left_right_margin"
+            android:paddingRight="@dimen/left_right_margin">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/left_right_margin"
+                    android:background="@drawable/corner_10dp_white"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/left_right_margin"
+                    android:paddingTop="10dp"
+                    android:paddingRight="@dimen/left_right_margin">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="请选择提现方式"
+                        android:textColor="#ff333333"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/bank_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:drawableTop="@drawable/icon_bank_selector"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_horizontal"
+                        android:text="银行卡"
+                        android:textColor="@color/grey_black"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/account_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:text=""
+                        android:textColor="#ff808080"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="提取现金"
+                        android:textColor="#ff333333"
+                        android:textSize="13sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="￥"
+                            android:textColor="#ff333333"
+                            android:textSize="36sp" />
+
+                        <EditText
+                            android:id="@+id/amount_edt"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:gravity="center_vertical"
+                            android:hint="可提现金额：￥0"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tv_all"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="全部"
+                            android:textColor="#ff333333"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <include layout="@layout/line" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="本次提现免服务费"
+                        android:textColor="#ff333333"
+                        android:textSize="13sp" />
+
+                    <Button
+                        android:id="@+id/withdrawal_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="19dp"
+                        android:layout_marginBottom="17dp"
+                        android:background="@drawable/theme_btn"
+                        android:text="提现"
+                        android:textColor="#ffffffff"
+                        android:textSize="17sp" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="19dp"
+                    android:drawableLeft="@drawable/icon_light"
+                    android:drawablePadding="7dp"
+                    android:gravity="center_vertical"
+                    android:text="提现说明"
+                    android:textColor="#ffff203a"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:lineSpacingExtra="5dp"
+                    android:text="1.用户提现前必须完成实名认证；\n2.每个自然月仅允许免费提现1次，另提现需加收0.3%的服务费；\n3.用户可对当前金额进行提现，发起提现后通常需要3-5个工作日才能到账；"
+                    android:textColor="#ff999999"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>
